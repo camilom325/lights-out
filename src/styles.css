@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/animate.css/animate.min.css";
+@font-face {
+  font-family: "Play";
+  src: url("./assets/fonts/Play/Play-Regular.ttf");
+}
+@font-face {
+  font-family: "Play-bold";
+  src: url("./assets/fonts/Play/Play-Bold.ttf");
+}
+
+body,
+html {
+  background: linear-gradient(to left, #005c7f, #46ae88), #0c5c7f;
+  font-family: Play, -apple-system, BlinkMacSystemFont, sans-serif;
+}
