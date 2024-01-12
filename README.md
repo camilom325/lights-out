@@ -1,6 +1,6 @@
 # LightsOut
 
-Welcome to the Lights Out Game repository! This project showcases a classic Lights Out puzzle implemented using Angular 17 and styled with Bootstrap. Lights Out is a challenging grid-based puzzle game where the goal is to turn off all the lights on the board.
+Welcome to the Lights Out Game repository! This project showcases a classic Lights Out puzzle implemented using Angular 16 and styled with Bootstrap. Lights Out is a challenging grid-based puzzle game where the goal is to turn off all the lights on the board.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
