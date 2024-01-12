@@ -15,7 +15,9 @@ cd lights-out-angular17`
 
 `npm install`
 
-3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+3. Run the app:
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Running unit tests
 
