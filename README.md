@@ -1,27 +1,31 @@
 # LightsOut
 
+Welcome to the Lights Out Game repository! This project showcases a classic Lights Out puzzle implemented using Angular 17 and styled with Bootstrap. Lights Out is a challenging grid-based puzzle game where the goal is to turn off all the lights on the board.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clone the Repository:
 
-## Code scaffolding
+`git clone https://github.com/your-username/lights-out-angular17.git
+cd lights-out-angular17`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Install dependencies:
 
-## Build
+`npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Features:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Responsive Design: The game is built with a responsive design, ensuring a seamless experience on various devices and screen sizes.
 
-## Further help
+- Angular 16: Leveraging the power of Angular, this project follows best practices for modularity, components, and services to create a maintainable and scalable application.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Game Logic: The Lights Out game logic is implemented to offer an engaging and challenging puzzle-solving experience.
+
