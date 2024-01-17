@@ -5,6 +5,7 @@ h4,
 h5,
 h6 {
   margin: 8px 0;
+  color: white;
 }
 
 p {
@@ -182,4 +183,13 @@ p {
   top: 50%;
   left: 50%;
   animation: none;
+}
+
+.nav-title em {
+  transition: all 0.5s ease-in-out;
+  font-size: x-large;
+}
+
+.nav-title:hover em {
+  filter: drop-shadow(0 0 5px white);
 }

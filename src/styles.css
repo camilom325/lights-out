@@ -13,3 +13,7 @@ html {
   background: linear-gradient(to left, #005c7f, #46ae88), #0c5c7f;
   font-family: Play, -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+* {
+  user-select: none;
+}

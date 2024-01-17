@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedServiceService } from './shared-service.service';
 
 @Component({
   selector: 'app-start-page',
@@ -7,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class StartPageComponent {
 
+  constructor(private sharedService: SharedServiceService) {}
+
   isHovered: boolean = false;
+  selection: string = 'easy';
 
   onHover() {
     this.isHovered = true;
@@ -16,5 +20,9 @@ export class StartPageComponent {
   onLeave() {
     this.isHovered = false;
   }
-  
+
+  onSelectionChange() {
+    this.sharedService.setSelection(this.selection);
+  }
+
 }

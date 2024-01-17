@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainGameModule } from './main-game/main-game.module';
 import { StartPageModule } from './start-page/start-page.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { StartPageModule } from './start-page/start-page.module';
     BrowserModule,
     AppRoutingModule,
     MainGameModule,
-    StartPageModule
+    StartPageModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

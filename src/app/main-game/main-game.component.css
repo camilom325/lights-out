@@ -1,0 +1,151 @@
+h3 {
+  margin: 8px 0;
+  color: white !important;
+}
+
+.container {
+  width: 85vw;
+  height: calc(90vh - 4rem);
+  border-radius: 30px;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 83, 114, 0.7),
+    rgba(0, 98, 136, 0.7)
+  );
+  box-shadow: 5px 5px 0px rgba(0, 67, 93, 0.8),
+    -5px -5px 0px rgba(0, 117, 161, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.lightcontainer {
+  width: 75%;
+  min-width: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+}
+
+.cell {
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  color: #0f2f40;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.active {
+  background-color: #0f2f40;
+  color: rgb(255, 255, 255);
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.inactive {
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.inactive h1:first-child {
+  transition: all 0.3s ease-in-out;
+}
+
+.inactive:hover h1:first-child {
+  opacity: 0.8;
+}
+
+.inactive:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.active h1:first-child {
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+
+.active:hover h1:first-child {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
+
+.active:hover {
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.clicked {
+  position: relative;
+}
+
+.click-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(10);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: circle-animation 0.5s ease;
+}
+
+.inactive .click-circle {
+  background-color: #0f2f40;
+}
+
+.active .click-circle {
+  background-color: #eee;
+}
+
+@keyframes circle-animation {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(10);
+    opacity: 1;
+  }
+}
+
+.ended {
+  transition: all 0.4s;
+  background-color: #0f2f40;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.ended * {
+  text-shadow: 0 0 10px white;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f2f40;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.info-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 85%;
+}

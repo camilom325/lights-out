@@ -1,13 +1,46 @@
 
 <div class="container animate__animated animate__zoomIn">
 
-  <div class="animate__animated animate__zoomIn animate__delay-1s">
+  <video src="../../assets/images/pexels-pachon-in-motion-15426876 (1080p).mp4" class="light-img" autoplay loop>
+    <track kind="subtitles" srclang="en" label="English">
+    <track kind="description" srclang="en" label="English">
+  </video>
+
+  <div class="animate__animated animate__zoomIn animate__delay-1s glass py-2">
     
-      <h1 class="">Lights out 
-        <em [class.fa-solid]="isHovered" (mouseover)="onHover()" (mouseout)="onLeave()"
-        class="fa-regular fa-lightbulb light-hover"></em></h1>
+
+      <h1 (mouseover)="onHover()" (mouseout)="onLeave()" class="title">
+          Lights out   
+        <em [class.fa-solid]="isHovered" class="fa-regular fa-lightbulb light-hover"></em>
+      </h1>
+
+      <div class="light-img">
+      </div>
+
+      <div class="form-container">
+        <section class="row pt-5 pb-2" style="width: 60vw;">
+          <div class="col" style="display: flex; flex-direction: row; align-items: baseline;">
+            <h2 style="justify-self: end;">Difficulty</h2>
+          </div>
+        </section>
+        <section class="row pb-5" style="width: 60vw;">
+          <div class="col" style="display: flex; flex-direction: row; text-align: left; align-items:start;">
+            <form class="radio-form">
+              <input [(ngModel)]="selection" value="easy" name="hopping" type="radio" id="easy">
+              <label for="easy"><span></span>Easy</label>
+              <input [(ngModel)]="selection" value="medium" name="hopping" type="radio" id="medium">
+              <label for="medium"><span></span>Medium</label>
+              <input [(ngModel)]="selection" value="hard" name="hopping" type="radio" id="hard">
+              <label for="hard"><span></span>Hard</label>
+              <div class="worm">
+                <div class="worm__segment"></div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
     
-      <button class="btn-change" routerLink="/game">
+      <button class="btn-change" routerLink="/game" (click)="onSelectionChange()">
         <span class="text-container">
           <span class="text">Play</span>
         </span>

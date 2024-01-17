@@ -1,3 +1,49 @@
-<p>
-  main-game works!
-</p>
+<div class="container">
+
+  <div class="animate__animated animate__zoomIn animate__delay-1s" *ngIf="!gameWon" [ngClass]="{'animate__zoomOut': hideBoard}">
+    <div class="row">
+      <div class="col-md-8 col-12">
+        <div class="p-1 py-3 lightcontainer">
+          <div class="row">
+            <div *ngFor="let row of board; let i = index">
+              <div *ngFor="let cell of row; let j = index" class="cell m-1" (click)="toggleLights(i, j)"
+                [ngClass]="{'active': cell, 'inactive': !cell, 'clicked': clickedCell === i + '-' + j, 'ended animate__animated animate__pulse' : hideBoard }">
+                <div *ngIf="clickedCell === i + '-' + j" class="click-circle"></div>
+                <h1>
+                  <em class="fa-solid fa-lightbulb"></em>
+                </h1>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col" >
+        <div class="info-container py-3 px-5 my-3" [ngClass]="{'animate__zoomOut': hideBoard, 'ended' : hideBoard}">
+          <div>
+            <h3>
+              Difficulty: {{selection}}
+            </h3>
+            <h3>
+              Movements: {{movements}}
+            </h3>
+            <button class="btn btn-outline-light btn-lg my-2" (click)="regenerate()">
+              New board
+            </button>
+            <button class="btn btn-outline-light btn-lg my-2" (click)="undo()" [ngClass]="{'disabled': !canUndo}" >
+              Undo
+            </button>
+            <button class="btn btn-outline-light btn-lg my-2" routerLink="/">
+              New game
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="animate__animated animate__zoomIn" *ngIf="gameWon">
+    Yei
+  </div>
+
+</div>
