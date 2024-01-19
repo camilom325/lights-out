@@ -17,3 +17,10 @@ html {
 * {
   user-select: none;
 }
+
+@media screen and (max-height: 450px) {
+  body,
+  html {
+    background: #005c7f;
+  }
+}
