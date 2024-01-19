@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Clone the Repository:
 
-`git clone https://github.com/your-username/lights-out-angular17.git`
+`git clone https://github.com/camilom325/lights-out.git`
 
 2. Install dependencies:
 
