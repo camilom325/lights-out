@@ -220,5 +220,7 @@ h1:hover em {
       rgba(0, 83, 114, 0.7),
       rgba(0, 98, 136, 0.7)
     );
+    width: 80vw;
+    height: calc(70vh - 4rem);
   }
 }
