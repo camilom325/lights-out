@@ -8,12 +8,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Clone the Repository:
 
-`git clone https://github.com/your-username/lights-out-angular17.git
-cd lights-out-angular17`
+`git clone https://github.com/camilom325/lights-out.git`
 
 2. Install dependencies:
 
-`npm install`
+`npm install` or `npm i` 
 
 3. Run the app:
 
@@ -21,7 +20,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via Jamine.
+
+to see the covergage on console run `ng test --code-coverage`.
 
 ## Features:
 
@@ -30,4 +31,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 - Angular 16: Leveraging the power of Angular, this project follows best practices for modularity, components, and services to create a maintainable and scalable application.
 
 - Game Logic: The Lights Out game logic is implemented to offer an engaging and challenging puzzle-solving experience.
+
+- Different libraries usage: Animations and other components are supported by npm packages that improve the developer experience.
 
