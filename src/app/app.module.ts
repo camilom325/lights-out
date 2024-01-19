@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { MainGameModule } from './main-game/main-game.module';
 import { StartPageModule } from './start-page/start-page.module';
 import { FormsModule } from '@angular/forms';
+import { WinPageModule } from './win-page/win-page.module';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent
-  ],
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MainGameModule,
     StartPageModule,
-    FormsModule
+    FormsModule,
+    WinPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

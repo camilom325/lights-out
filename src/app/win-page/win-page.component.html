@@ -1,0 +1,20 @@
+<div class="container" [ngClass]="{'animate__animated animate__zoomOut': goHome}">
+
+  <video src="../../assets/images/win-vid.mp4" autoplay loop>
+    <track kind="subtitles" srclang="en" label="English">
+    <track kind="description" srclang="en" label="English">
+  </video>
+  
+  <div class="win-content">
+    <h1 (mouseover)="onHoverConfetti()" class="animate__animated animate__pulse animate__infinite animate__slow" >
+      YOU WIN! <br> <em class="fa-solid fa-lightbulb"></em>
+    </h1>
+    <button class="btn-change mt-3" (click)="navigate()" >
+      <span class="text-container">
+        <span class="text">Play again</span>
+      </span>
+    </button>
+  </div>
+
+
+</div>

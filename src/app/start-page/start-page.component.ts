@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedServiceService } from './shared-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start-page',
@@ -8,7 +9,9 @@ import { SharedServiceService } from './shared-service.service';
 })
 export class StartPageComponent {
 
-  constructor(private sharedService: SharedServiceService) {}
+  goToGame = false;
+
+  constructor(private sharedService: SharedServiceService, private router: Router) {}
 
   isHovered: boolean = false;
   selection: string = 'easy';
@@ -22,7 +25,11 @@ export class StartPageComponent {
   }
 
   onSelectionChange() {
-    this.sharedService.setSelection(this.selection);
+    this.goToGame = true;
+    setTimeout(() => {
+      this.sharedService.setSelection(this.selection);
+      this.router.navigate(['/game']);
+    }, 1000);
   }
 
 }

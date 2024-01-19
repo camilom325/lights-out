@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container blue animate__animated animate__zoomIn" *ngIf="!gameWon" [ngClass]="{'animate__zoomOut animate__delay-1s': hideBoard}">
 
-  <div class="animate__animated animate__zoomIn animate__delay-1s" *ngIf="!gameWon" [ngClass]="{'animate__zoomOut': hideBoard}">
+  <div class="animate__animated animate__zoomIn" [ngClass]="{'animate__zoomOut animate__slower': hideBoard, 'animate__delay-1s': !hideBoard}">
     <div class="row">
       <div class="col-md-8 col-12">
         <div class="p-1 py-3 lightcontainer">
           <div class="row">
             <div *ngFor="let row of board; let i = index">
               <div *ngFor="let cell of row; let j = index" class="cell m-1" (click)="toggleLights(i, j)"
-                [ngClass]="{'active': cell, 'inactive': !cell, 'clicked': clickedCell === i + '-' + j, 'ended animate__animated animate__pulse' : hideBoard }">
+                [ngClass]="{'active': cell, 'inactive': !cell, 'clicked': clickedCell === i + '-' + j, 'ended animate__animated animate__pulse' : preHideBoard }">
                 <div *ngIf="clickedCell === i + '-' + j" class="click-circle"></div>
                 <h1>
                   <em class="fa-solid fa-lightbulb"></em>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col" >
-        <div class="info-container py-3 px-5 my-3" [ngClass]="{'animate__zoomOut': hideBoard, 'ended' : hideBoard}">
+        <div class="info-container py-3 px-5 my-3" [ngClass]="{'animate__zoomOut': hideBoard, 'ended' : preHideBoard}">
           <div>
             <h3>
               Difficulty: {{selection}}
@@ -41,9 +41,9 @@
       </div>
     </div>
   </div>
+  
+</div>
 
-  <div class="animate__animated animate__zoomIn" *ngIf="gameWon">
-    Yei
-  </div>
-
+<div class="container animate__animated animate__zoomIn" *ngIf="gameWon">
+  <app-win-page />
 </div>

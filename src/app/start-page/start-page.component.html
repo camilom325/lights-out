@@ -1,5 +1,5 @@
 
-<div class="container animate__animated animate__zoomIn">
+<div class="container animate__animated animate__zoomIn" [ngClass]="{'animate__zoomOut': goToGame}">
 
   <video src="../../assets/images/pexels-pachon-in-motion-15426876 (1080p).mp4" class="light-img" autoplay loop>
     <track kind="subtitles" srclang="en" label="English">
@@ -40,7 +40,7 @@
         </section>
       </div>
     
-      <button class="btn-change" routerLink="/game" (click)="onSelectionChange()">
+      <button class="btn-change" (click)="onSelectionChange()">
         <span class="text-container">
           <span class="text">Play</span>
         </span>

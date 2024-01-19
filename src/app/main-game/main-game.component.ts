@@ -15,6 +15,7 @@ export class MainGameComponent implements OnInit {
   board: boolean[][] = [];
   gameWon = false;
   hideBoard = false;
+  preHideBoard = false;
   i: number|undefined;
   j: number | undefined;
   canUndo = false;
@@ -34,6 +35,9 @@ export class MainGameComponent implements OnInit {
     
   }
 
+  /**
+   * Generates a random board for the game.
+   */
   generateRandomBoard(): void {
     for (let i = 0; i < this.gridSize; i++) {
       this.board[i] = [];
@@ -43,7 +47,7 @@ export class MainGameComponent implements OnInit {
     }
     for (let i = 0; i < this.gridSize; i++) {
       for (let j = 0; j < this.gridSize; j++) {
-        if (Math.random() > 0.9) {
+        if (Math.random() > 0.6) {
           this.toggleLights(i, j, true);
         }
       }
@@ -51,6 +55,13 @@ export class MainGameComponent implements OnInit {
     this.movements = 0;
   }
   
+  /**
+   * Toggles the lights at the specified row and column in the game board.
+   * 
+   * @param row - The row index of the cell.
+   * @param col - The column index of the cell.
+   * @param initial - Optional parameter indicating if it's the initial toggle.
+   */
   toggleLights(row: number, col: number, initial?: boolean): void {
     
     this.i = row;
@@ -84,15 +95,24 @@ export class MainGameComponent implements OnInit {
       this.board[row][col] = !this.board[row][col];
       this.clickedCell = '0';
       if (this.checkCompleteBoard(this.board)) {
-        this.hideBoard = true;
+        this.preHideBoard = true;
+        setTimeout(() => {
+            this.hideBoard = true;
+          }, 1000);
           setTimeout(() => {
             this.gameWon = true;
-          }, 2000);
+          }, 3000);
       }
     }, 400);
     
 }
 
+  /**
+   * Checks if the board is complete, i.e., if all elements in the matrix are false.
+   * 
+   * @param matrix - The matrix representing the board.
+   * @returns True if the board is complete, false otherwise.
+   */
   checkCompleteBoard (matrix: boolean[][]): boolean {
     for (let i = 0; i < matrix.length; i++) {
       for (let j = 0; j < matrix[i].length; j++) {
@@ -104,6 +124,10 @@ export class MainGameComponent implements OnInit {
     return true;
   }
     
+  /**
+   * Regenerates the game board with a new random configuration.
+   * Resets the game state.
+   */
   regenerate() {
     this.generateRandomBoard();
     this.gameWon = false;
@@ -112,6 +136,12 @@ export class MainGameComponent implements OnInit {
     this.j = undefined;
   }
     
+  /**
+   * Reverts the previous move by toggling the lights back to their previous state.
+   * Decreases the number of movements to the antique number.
+   * Resets the selected row and column indices.
+   * Disables the ability to undo the move after undoing a move.
+   */
   undo() {
     if ( typeof this.i === 'number' && typeof this.j === 'number') {
       this.toggleLights(this.i, this.j);
