@@ -1,7 +1,7 @@
 
 <div class="container animate__animated animate__zoomIn" [ngClass]="{'animate__zoomOut': goToGame}">
 
-  <video src="../../assets/images/pexels-pachon-in-motion-15426876 (1080p).mp4" class="light-img" autoplay loop>
+  <video src="../../assets/images/pexels-pachon-in-motion-15426876 (1080p).mp4" autoplay loop playsinline muted>
     <track kind="subtitles" srclang="en" label="English">
     <track kind="description" srclang="en" label="English">
   </video>
@@ -13,9 +13,6 @@
           Lights out   
         <em [class.fa-solid]="isHovered" class="fa-regular fa-lightbulb light-hover"></em>
       </h1>
-
-      <div class="light-img">
-      </div>
 
       <div class="form-container">
         <section class="row pt-5 pb-2" style="width: 60vw;">

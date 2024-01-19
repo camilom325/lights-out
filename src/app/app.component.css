@@ -51,6 +51,7 @@ p {
   border-radius: 10px;
   border: 0.13rem solid rgba(254, 254, 254, 0.1);
 }
+
 .content {
   height: calc(100vh - 4rem);
   width: 100vw;
@@ -71,125 +72,176 @@ p {
   z-index: 1;
 }
 
-@keyframes float {
-  0% {
-    opacity: 0.7;
-    border-radius: 15%;
-    transform: translateY(0) rotate(0deg);
+@media screen and (max-width: 600px), (max-height: 500px) {
+  .content {
+    height: 100%;
+    width: 100%;
   }
-  50% {
-    opacity: 0.1;
+
+  .circles {
+    overflow: hidden;
+    height: 100vh;
+    top: 0;
   }
-  100% {
-    opacity: 0;
-    border-radius: 50%;
-    transform: translateY(-57rem) rotate(720deg);
+
+  @keyframes float {
+    0% {
+      opacity: 0.7;
+      border-radius: 15%;
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 0;
+      border-radius: 50%;
+      transform: translateY(-57rem) rotate(720deg);
+    }
+  }
+
+  .circles div {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background: aliceblue;
+    bottom: -7rem;
+    animation: float 25s linear infinite;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .circles div:nth-child(1) {
+    left: 10%;
+    width: 2rem;
+    height: 2rem;
+    animation-duration: 15s;
+    animation-delay: 4s;
+  }
+
+  .circles div:nth-child(2) {
+    left: 25%;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .circles div:nth-child(3) {
+    left: 35%;
+    width: 1.2rem;
+    height: 1.2rem;
+    animation-duration: 20s;
+    animation-delay: 14s;
+  }
+
+  .circles div:nth-child(4) {
+    left: 80%;
+    width: 5.7rem;
+    height: 5.7rem;
+    animation-duration: 45s;
+    animation-delay: 23s;
+  }
+
+  .circles div:nth-child(5) {
+    left: 75%;
+    width: 2rem;
+    height: 2rem;
+    animation-duration: 20s;
+    animation-delay: 3s;
+  }
+
+  .circles div:nth-child(6) {
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    animation-delay: 20s;
+  }
+
+  .circles div:nth-child(7) {
+    left: 100%;
+    width: 6rem;
+    height: 6rem;
+    animation-duration: 50s;
+    animation-delay: 14s;
+  }
+
+  .circles div:nth-child(8) {
+    left: 60%;
+    width: 1.7rem;
+    height: 1.7rem;
+    animation-duration: 15s;
+    animation-delay: 6s;
+  }
+
+  .circles div:nth-child(9) {
+    left: 40%;
+    width: 0.5rem;
+    height: 0.5rem;
+    animation-duration: 27s;
+    animation-delay: 9s;
+  }
+
+  .circles div:nth-child(10) {
+    left: 90%;
+    width: 0.3rem;
+    height: 0.3rem;
+    animation-duration: 10s;
+    animation-delay: 15s;
+  }
+
+  .circles div:nth-child(11) {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    background: none;
+    top: 50%;
+    left: 50%;
+    animation: none;
+  }
+
+  .nav-title em {
+    transition: all 0.5s ease-in-out;
+    font-size: x-large;
+  }
+
+  .nav-title:hover em {
+    filter: drop-shadow(0 0 5px white);
   }
 }
 
-.circles div {
-  position: absolute;
-  display: block;
-  list-style: none;
-  background: aliceblue;
-  bottom: -7rem;
-  animation: float 25s linear infinite;
-  width: 1rem;
-  height: 1rem;
-}
+@media screen and (max-height: 450px) {
+  .toolbar {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    background-color: #045b7a;
+    color: white;
+    font-weight: 600;
+    z-index: 1000;
+  }
 
-.circles div:nth-child(1) {
-  left: 10%;
-  width: 2rem;
-  height: 2rem;
-  animation-duration: 15s;
-  animation-delay: 4s;
-}
+  .toolbar img {
+    margin: 0 16px;
+  }
 
-.circles div:nth-child(2) {
-  left: 25%;
-  width: 5rem;
-  height: 5rem;
-}
+  .toolbar span {
+    font-family: Play_bold, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: medium;
+  }
 
-.circles div:nth-child(3) {
-  left: 35%;
-  width: 1.2rem;
-  height: 1.2rem;
-  animation-duration: 20s;
-  animation-delay: 14s;
-}
+  .toolbar span em {
+    font-size: large;
+  }
 
-.circles div:nth-child(4) {
-  left: 80%;
-  width: 5.7rem;
-  height: 5.7rem;
-  animation-duration: 45s;
-  animation-delay: 23s;
-}
+  .toolbar #github-logo {
+    height: 20px;
+  }
 
-.circles div:nth-child(5) {
-  left: 75%;
-  width: 2rem;
-  height: 2rem;
-  animation-duration: 20s;
-  animation-delay: 3s;
-}
+  .logo {
+    height: 30px;
+    width: 30px;
+  }
 
-.circles div:nth-child(6) {
-  left: 50%;
-  width: 3rem;
-  height: 3rem;
-  animation-delay: 20s;
-}
-
-.circles div:nth-child(7) {
-  left: 100%;
-  width: 6rem;
-  height: 6rem;
-  animation-duration: 50s;
-  animation-delay: 14s;
-}
-
-.circles div:nth-child(8) {
-  left: 60%;
-  width: 1.7rem;
-  height: 1.7rem;
-  animation-duration: 15s;
-  animation-delay: 6s;
-}
-
-.circles div:nth-child(9) {
-  left: 40%;
-  width: 0.5rem;
-  height: 0.5rem;
-  animation-duration: 27s;
-  animation-delay: 9s;
-}
-
-.circles div:nth-child(10) {
-  left: 90%;
-  width: 0.3rem;
-  height: 0.3rem;
-  animation-duration: 10s;
-  animation-delay: 15s;
-}
-
-.circles div:nth-child(11) {
-  z-index: 1;
-  position: absolute;
-  display: flex;
-  background: none;
-  top: 50%;
-  left: 50%;
-  animation: none;
-}
-
-.nav-title em {
-  transition: all 0.5s ease-in-out;
-  font-size: x-large;
-}
-
-.nav-title:hover em {
-  filter: drop-shadow(0 0 5px white);
+  .container {
+    top: 0rem !important;
+  }
 }

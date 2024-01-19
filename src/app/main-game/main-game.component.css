@@ -152,3 +152,28 @@ h3 {
 .btn {
   width: 85%;
 }
+
+@media screen and (max-width: 600px), (max-height: 500px) {
+  .blue {
+    background: none;
+    box-shadow: none;
+  }
+
+  .container {
+    overflow: visible;
+  }
+
+  .row {
+    position: absolute;
+    top: -25%;
+  }
+
+  .no-movile {
+    display: none;
+    visibility: hidden;
+  }
+
+  em {
+    font-size: 80%;
+  }
+}
