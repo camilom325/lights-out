@@ -19,6 +19,7 @@ export class MainGameComponent implements OnInit {
   i: number|undefined;
   j: number | undefined;
   canUndo = false;
+  showInstructions = false;
 
   constructor(private sharedService: SharedServiceService) {}
 
@@ -152,5 +153,12 @@ export class MainGameComponent implements OnInit {
     }
   }
   
+  toggleInstructions() {
+    this.showInstructions = !this.showInstructions;
+  }
+
+  closeInstructions() {
+    this.showInstructions = false;
+  }
 
 }

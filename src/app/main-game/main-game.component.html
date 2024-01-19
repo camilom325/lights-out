@@ -36,6 +36,19 @@
             <button class="btn btn-outline-light btn-lg my-2" routerLink="/">
               New game
             </button>
+            <button class="btn btn-outline-light btn-lg my-2" (click)="toggleInstructions()">
+              How to play
+            </button>
+          </div>
+          <div class="overlay" [ngClass]="{'show': showInstructions}" *ngIf="showInstructions">
+            <div class="popup">
+              <button class="close-btn"><em class="fa-solid fa-xmark" (click)="closeInstructions()"></em></button>
+              <h2>How to Play</h2>
+              <p>You'll see a grid of lights; each light can be either on or off.</p>
+              <p>Click the lights to toggle their states and turn them on.</p>
+              <p>Toggling a light also affects the lights next to it.</p>
+              <p>Experiment with different patterns to solve the puzzle!</p>
+            </div>
           </div>
         </div>
       </div>
